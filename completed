@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<math.h>
+
+void main()
+{
+	int t,count=0,y,x,i,k,inc=0,l,j,no;
+	int powr,var[10],loop1,loop2,testcase;
+	
+	printf("enter the number of tet cases:");
+	scanf("%d",&testcase);
+	
+	for(loop1=0;loop1<testcase;loop1++)
+	{
+		printf("\nenter the integer value:");
+		scanf("%d",&var[loop1]);
+	}
+	
+	//printf("\nenter the integer value:");
+	//scanf("%d",&n);
+	for(loop2=0;loop2<testcase;loop2++)
+	{
+	powr = var[loop2];
+	//printf("\npowr = %d\n",powr);	
+	x=pow(2,powr);
+		
+//	printf("\n%d\n",x);
+	
+	for (i=1;i<x;i++)
+	{
+		k=i;
+		l=k%2;
+		k=k/2;
+		no=1;
+		do
+		{
+			j=k%2;
+			k=k/2;
+			no++;
+			//printf("%d\n",no);
+			if(j==l && j==0)
+			{
+				inc=0;
+				break;
+			}
+			else
+			{
+				inc=1;
+				l=j;
+				continue;
+			}
+					
+		}
+		while(k>0);
+		if(no<powr && j==0 || no+1<powr)
+		{
+			inc=0;
+			
+		}
+		
+		
+		
+		if(inc==1)
+		count++;
+	}
+	printf("\ncount=%d",count);
+	count=0;
+	inc=0;
+}
+	
+}
