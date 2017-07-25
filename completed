@@ -6,7 +6,7 @@ void main()
 	int t,count=0,y,x,i,k,inc=0,l,j,no;
 	int powr,var[10],loop1,loop2,testcase;
 	
-	printf("enter the number of tet cases:");
+	printf("enter the number of test cases:");
 	scanf("%d",&testcase);
 	
 	for(loop1=0;loop1<testcase;loop1++)
