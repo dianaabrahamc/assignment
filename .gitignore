@@ -21,6 +21,63 @@
 *.a
 *.la
 *.lo
+#include<stdio.h>
+#include<math.h>
+
+void main()
+{
+	int t,n,count=0,y,x,i,k,inc=0,l,j,no;
+	
+//	printf("enter the number of tet cases:");
+//	scanf("%d",&t);
+	
+	printf("\nenter the integer value:");
+	scanf("%d",&n);
+	
+	x=pow(2,n);
+		
+//	printf("\n%d\n",x);
+	
+	for (i=1;i<x;i++)
+	{
+		k=i;
+		l=k%2;
+		k=k/2;
+		no=1;
+		do
+		{
+			j=k%2;
+			k=k/2;
+			no++;
+			printf("%d\n",no);
+			if(j==l && j==0)
+			{
+				inc=0;
+				break;
+			}
+			else
+			{
+				inc=1;
+				l=j;
+				continue;
+			}
+					
+		}
+		while(k>0);
+		if(no<n && j==0 || no+1<n)
+		{
+			inc=0;
+			
+		}
+		
+		
+		
+		if(inc==1)
+		count++;
+	}
+	printf("\ncount=%d",count);
+	
+}
 
 # Shared objects (inc. Windows DLLs)
 *.dll
